@@ -23,7 +23,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Build
-        run: yarn && yarn export
+        run: yarn && yarn build && yarn export
         env:
           NEXT_PUBLIC_PUBLISHABLE_KEY: https://abcd
 
