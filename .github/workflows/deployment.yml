@@ -1,0 +1,31 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  development:
+    name: Deploy Development
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: Build
+        run: yarn && yarn build
+        env:
+          NEXT_PUBLIC_PUBLISHABLE_KEY: https://abcd
+
+      - name: Deploy static site to S3 bucket
+        run: aws s3 sync ./dist s3://sekyungk.seoul
