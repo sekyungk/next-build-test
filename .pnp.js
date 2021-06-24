@@ -21,11 +21,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "next-build-test",
         "reference": "workspace:."
+      },
+      {
+        "name": "admin",
+        "reference": "workspace:apps/admin"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
+      ["admin", ["workspace:apps/admin"]],
       ["next-build-test", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -277,6 +282,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["abbrev", "npm:1.1.1"]
           ],
           "linkType": "HARD",
+        }]
+      ]],
+      ["admin", [
+        ["workspace:apps/admin", {
+          "packageLocation": "./apps/admin/",
+          "packageDependencies": [
+            ["admin", "workspace:apps/admin"],
+            ["@types/node", "npm:15.12.4"],
+            ["@types/react", "npm:17.0.11"],
+            ["next", "virtual:2c2119754d2b06abb53a3b1097a34e3618eb3af71eea32a6bdd130df91711b49728bedc7b189465e154b0768de398d628626e18e03bfdb781daf100b619b68c7#npm:11.0.1"],
+            ["react", "npm:17.0.2"],
+            ["react-dom", "virtual:2c2119754d2b06abb53a3b1097a34e3618eb3af71eea32a6bdd130df91711b49728bedc7b189465e154b0768de398d628626e18e03bfdb781daf100b619b68c7#npm:17.0.2"],
+            ["typescript", "patch:typescript@npm%3A4.3.4#builtin<compat/typescript>::version=4.3.4&hash=ddfc1b"]
+          ],
+          "linkType": "SOFT",
         }]
       ]],
       ["agent-base", [

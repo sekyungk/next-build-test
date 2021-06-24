@@ -183,6 +183,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"admin@workspace:apps/admin":
+  version: 0.0.0-use.local
+  resolution: "admin@workspace:apps/admin"
+  dependencies:
+    "@types/node": ^15.12.4
+    "@types/react": ^17.0.11
+    next: ^11.0.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    typescript: ^4.3.4
+  languageName: unknown
+  linkType: soft
+
 "agent-base@npm:6, agent-base@npm:^6.0.2":
   version: 6.0.2
   resolution: "agent-base@npm:6.0.2"
