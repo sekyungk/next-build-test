@@ -26,6 +26,7 @@ jobs:
         run: yarn && yarn build && yarn export
         env:
           NEXT_PUBLIC_PUBLISHABLE_KEY: https://abcd
+          ENV: asdfasdf
 
       - name: Deploy static site to S3 bucket
         run: aws s3 sync ./out s3://sekyungk.seoul

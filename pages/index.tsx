@@ -1,6 +1,9 @@
 function HomePage() {
   return (
-    <div>Welcome to Next.js!{process.env.NEXT_PUBLIC_PUBLISHABLE_KEY}</div>
+    <div>
+      {process.env.ENV}Welcome to Next.js!
+      {process.env.NEXT_PUBLIC_PUBLISHABLE_KEY}
+    </div>
   );
 }
 
