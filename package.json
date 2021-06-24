@@ -5,7 +5,8 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach -ti run build"
+    "build": "yarn workspaces foreach -ti run build",
+    "export": "yarn workspaces foreach -ti run export"
   },
   "dependencies": {
     "next": "^11.0.1",
