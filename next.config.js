@@ -1,5 +1,5 @@
 module.exports = {
-  future: {
-    webpack5: true,
+  env: {
+    ENV: process.env.ENV,
   },
 };
